@@ -1,0 +1,28 @@
+{
+    "name": "Terraform Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+
+    "features": {
+        "ghcr.io/devcontainers/features/aws-cli:1": {
+            "version": "latest"
+        }
+  },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "hashicorp.terraform",
+                "github.vscode-pull-request-github",
+                "aws-toolkit-vscode.aws-toolkit-vscode"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "zsh"
+             
+            }
+           
+        }
+    },
+    "remoteUser": "root",
+    "postCreateCommand": "terraform --version && git --version && aws --version"
+}
