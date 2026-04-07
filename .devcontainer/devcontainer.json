@@ -1,34 +1,22 @@
 {
     "name": "Terraform Environment",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
     },
-
-    "features": {
-        "ghcr.io/devcontainers/features/aws-cli:1": {
-            "version": "latest"
-        },
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "lts"
-    }
-  },
     "customizations": {
         "vscode": {
             "extensions": [
                 "hashicorp.terraform",
-                "github.vscode-pull-request-github",
-                "aws-toolkit-vscode.aws-toolkit-vscode"
+                "github.vscode-pull-request-github"
             ],
             "settings": {
-                "terminal.integrated.defaultProfile.linux": "zsh"
-             
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "workbench.editorAssociations": {
+                    "*.md": "vscode.markdown.preview"
+                }
             }
-           
         }
     },
-    "remoteEnv": {
-        "AWS_CLI_AUTO_PROMPT": "on-partial"
-    },
     "remoteUser": "root",
-    "postCreateCommand": "terraform --version && git --version && npm install -g aws-cdk && aws --version && cdk --version"
+    "postCreateCommand": "terraform --version && git --version"
 }
