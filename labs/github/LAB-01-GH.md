@@ -36,8 +36,8 @@ Note this version number as you'll need it for the provider configuration.
 Create a labs directory and a terraform directory within it that will serve as your workspace for these initial labs:
 
 ```bash
-mkdir -p labs/terraform
-cd labs/terraform
+mkdir -p labs/github/terraform
+cd labs/github/terraform
 ```
 
 Create the initial configuration files in this directory:
@@ -51,10 +51,11 @@ You can also just create these in VSCode by right-clicking the directory.
 Your directory structure should look like this:
 ```bash
 labs/
-└── terraform/
-    ├── main.tf
-    ├── providers.tf
-    └── variables.tf
+└── github/
+  └── terraform/
+      ├── main.tf
+      ├── providers.tf
+      └── variables.tf
 ```
 
 This directory will be your working environment for the upcoming labs as we build our infrastructure incrementally.

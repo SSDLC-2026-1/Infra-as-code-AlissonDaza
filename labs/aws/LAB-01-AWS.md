@@ -36,8 +36,8 @@ Note this version number as you'll need it for the provider configuration.
 Create a labs directory and a terraform directory within it that will serve as your workspace for these initial labs:
 
 ```bash
-mkdir -p labs/terraform
-cd labs/terraform
+mkdir -p labs/aws/terraform
+cd labs/aws/terraform
 ```
 
 Create the initial configuration files in this directory:
@@ -50,10 +50,11 @@ You can also just create these in VSCode by right-clicking the directory.
 Your directory structure should look like this:
 ```
 labs/
-└── terraform/
-    ├── main.tf
-    ├── providers.tf
-    └── variables.tf
+└── aws/
+    └── terraform/
+        ├── main.tf
+        ├── providers.tf
+        └── variables.tf
 ```
 
 This directory will be your working environment for the upcoming labs as we build our infrastructure incrementally.
@@ -101,13 +102,12 @@ Expected output:
 Initializing the backend...
 Initializing provider plugins...
 - Finding hashicorp/aws versions matching "~> 5.0"...
-- Installing hashicorp/aws v5.87.0...
-- Installed hashicorp/aws v5.87.0 (signed by HashiCorp)
+- Installing hashicorp/aws v5.100.0...
+- Installed hashicorp/aws v5.100.0 (signed by HashiCorp)
 Terraform has created a lock file .terraform.lock.hcl to record the provider
 selections it made above. Include this file in your version control repository
 so that Terraform can guarantee to make the same selections by default when
 you run "terraform init" in the future.
-
 
 Terraform has been successfully initialized!
 ```

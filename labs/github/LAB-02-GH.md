@@ -30,15 +30,18 @@ In this lab, you will create your first GitHub resources using Terraform: a repo
 
 5. Verify your email address, if it hasn't been verified yet.
 
-6. In the "Note" field, give your token a descriptive name: `IaC-Token`.
+6. Decide your student identifier using this format: `firstname-lastname`.
+   Example: `sara-palacios`
 
-7. Leave expiration in 30 days.
+7. In the "Note" field, give your token a descriptive name: `IaC-Token-firstname-lastname`.
 
-8. Select the scopes: repo, admin:org
+8. Leave expiration in 30 days.
 
-9. Click Generate token.
+9. Select the scopes: repo, admin:org
 
-10. SAVE YOUR TOKEN!
+10. Click Generate token.
+
+11. SAVE YOUR TOKEN!
 
 ### 1. Navigate to Your Configuration Directory
 
@@ -46,11 +49,11 @@ Ensure you're in the terraform directory created in LAB-01:
 
 ```bash
 pwd
-/workspaces/terraform-codespaces/labs/terraform
+/workspaces/Infra-as-code/labs/github/labs/github/terraform
 ```
 If you're in a different directory, change to the Terraform working directory:
 ```bash
-cd labs/terraform
+cd labs/github/terraform
 ```
 
 ### 2. Configure GitHub Credentials
@@ -63,13 +66,19 @@ export GITHUB_TOKEN="your_personal_access_token"
 
 ### 3. Add Resource Configuration
 
-Open `main.tf` and add the following configuration (purposely not written in HCL canonical style):
+Open `main.tf` and add the following configuration (purposely not written in HCL canonical style).
+
+Before writing the resource, choose your personal identifier using this format:
+- `firstname-lastname`
+- Example: `sara-palacios`
+
+Use that value in the repository name so we all create a unique repository.
 
 ```hcl
 # Create the repository
 resource "github_repository" "example" {
-  name = "terraform-example"
-  description = "Repository created by Terraform"
+  name = "terraform-example-firstname-lastname"
+  description = "Repository created by Terraform by Firstname Lastname"
   visibility = "public"
 
   auto_init = true
@@ -134,7 +143,7 @@ Let's verify our resources in the GitHub web interface:
 
 1. Open your web browser and navigate to `GitHub.com`
 2. Go to your repositories list
-3. You should see the new `terraform-example` repository
+3. You should see the new `terraform-example-firstname-lastname` repository
 4. Click into the repository to verify:
    - The repository description
    - The enabled features (Issues, Discussions, Wiki)
@@ -149,8 +158,8 @@ In the `main.tf` file, update the repository configuration:
 
 ```hcl
 resource "github_repository" "terraform" {
-  name        = "terraform-course-repo"
-  description = "Updated repository description"  # <-- change description
+  name        = "terraform-course-repo-firstname-lastname"
+  description = "Updated repository description by Firstname Lastname"  # <-- change description
   visibility  = "public"
 
   auto_init = true
@@ -226,7 +235,7 @@ Review the proposed changes and type `yes` when prompted to confirm.
 
 Confirm that:
 1. The resources exist in your GitHub account with:
-   - Repository named `terraform-course-repo`
+   - Repository named `terraform-course-repo-firstname-lastname`
    - Updated description and topics
    - Wiki disabled
    - Branch protection requiring `2` reviewers
