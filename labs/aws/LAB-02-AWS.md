@@ -271,3 +271,4 @@ If you encounter AMI lookup issues:
 - Verify the AWS region in `provider "aws"` matches where you want to deploy
 - Re-run `terraform plan` to refresh the AMI data source lookup
 ![alt text](image-22.png)
+![alt text](image-23.png)
