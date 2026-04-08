@@ -30,6 +30,7 @@ terraform version
 ```
 
 Note this version number as you'll need it for the provider configuration.
+![alt text](image.png)
 
 ### 2. Create the Project Structure
 
@@ -45,7 +46,7 @@ Create the initial configuration files in this directory:
 ```bash
 touch main.tf variables.tf providers.tf
 ```
-
+![alt text](image-1.png)
 You can also just create these in VSCode by right-clicking the directory.
 
 Your directory structure should look like this:
@@ -77,7 +78,7 @@ terraform {
 
 provider "github" {}
 ```
-
+![alt text](image-3.png)
 ### 4. Format the Configuration
 
 Run the following command to ensure consistent formatting:
@@ -85,7 +86,7 @@ Run the following command to ensure consistent formatting:
 ```bash
 terraform fmt
 ```
-
+![alt text](image-2.png)
 Expected output: If any files were formatted, their names will be listed. If no formatting was needed, there will be no output.
 
 ### 5. Initialize the Working Directory
@@ -108,7 +109,7 @@ If you'd like to know more about provider signing, you can read about it here:
 https://www.terraform.io/docs/cli/plugins/signing.html
 Terraform has created a lock file .terraform.lock.hcl to record the provider
 ```
-
+![alt text](image-4.png)
 ### 6. Validate the Configuration
 
 Run the validation command to check for syntax errors:
@@ -121,7 +122,7 @@ Expected output:
 ```
 Success! The configuration is valid.
 ```
-
+![alt text](image-5.png)
 ### 7. Test Version Constraints
 
 Let's experiment with version constraints:
@@ -145,7 +146,8 @@ Error: Unsupported Terraform Core version
 This configuration requires Terraform version >= 99.0.0, but the current version
 is x.x.x. Please upgrade Terraform to a supported version.
 ```
-
+![alt text](image-6.png)
+![alt text](image-7.png)
 3. Change the version requirement back to your current version:
 
 ```hcl

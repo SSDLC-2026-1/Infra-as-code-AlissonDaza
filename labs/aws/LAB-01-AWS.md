@@ -58,7 +58,7 @@ labs/
 ```
 
 This directory will be your working environment for the upcoming labs as we build our infrastructure incrementally.
-
+![alt text](image.png)
 
 ### 3. Configure the AWS Provider
 
@@ -79,7 +79,7 @@ provider "aws" {
   region = "us-east-1"
 }
 ```
-
+![alt text](image-1.png)
 ### 4. Format the Configuration
 
 Run the following command to ensure consistent formatting:
@@ -87,7 +87,7 @@ Run the following command to ensure consistent formatting:
 ```bash
 terraform fmt
 ```
-
+![alt text](image-2.png)
 Expected output: If any files were formatted, their names will be listed. If no formatting was needed, there will be no output.
 
 ### 5. Initialize the Working Directory
@@ -96,7 +96,7 @@ Expected output: If any files were formatted, their names will be listed. If no 
  ```bash
  terraform init
  ```
-
+![alt text](image-3.png)
 Expected output:
 ```bash
 Initializing the backend...
@@ -119,7 +119,7 @@ Run the validation command to check for syntax errors:
 ```bash
 terraform validate
 ```
-
+![alt text](image-4.png)
 Expected output:
 ```
 Success! The configuration is valid.
@@ -134,13 +134,13 @@ Let's experiment with version constraints:
 ```hcl
 required_version = ">= 99.0.0"  # An intentionally high version
 ```
-
+![alt text](image-5.png)
 2. Run the terraform initialization command:
 
 ```bash
 terraform init
 ```
-
+![alt text](image-6.png)
 You should see an error message similar to:
 ```
 Initializing the backend...
@@ -162,7 +162,7 @@ required_version = ">= 1.10.x"  # Replace with your actual version
 ```bash
 terraform init
 ```
-
+![alt text](image-7.png)
 Expected output: You should now see success messages indicating proper initialization.
 
 ## Verification Steps

@@ -43,19 +43,20 @@ In this lab, you will create your first GitHub resources using Terraform: a repo
 
 11. SAVE YOUR TOKEN!
 
+![alt text](image-8.png)
 ### 1. Navigate to Your Configuration Directory
 
 Ensure you're in the terraform directory created in LAB-01:
 
 ```bash
 pwd
-/workspaces/Infra-as-code/labs/github/labs/github/terraform
+/workspaces/Infra-as-code/labs/github/terraform
 ```
 If you're in a different directory, change to the Terraform working directory:
 ```bash
 cd labs/github/terraform
 ```
-
+![alt text](image-10.png) 
 ### 2. Configure GitHub Credentials
 
 Set your GitHub credentials as environment variables:
@@ -63,7 +64,7 @@ Set your GitHub credentials as environment variables:
 ```bash
 export GITHUB_TOKEN="your_personal_access_token"
 ```
-
+![a](image-11.png)
 ### 3. Add Resource Configuration
 
 Open `main.tf` and add the following configuration (purposely not written in HCL canonical style).
@@ -127,7 +128,8 @@ terraform plan
 The plan output will show that Terraform intends to create:
 - A new private repository with specified features
 - A branch protection rule requiring one review for the main branch
-
+![alt text](image-13.png)
+![alt text](image-12.png)
 ### 6. Apply the Configuration
 
 Apply the configuration to create the resources:
@@ -152,6 +154,7 @@ Let's verify our resources in the GitHub web interface:
    - The branch protection rule is applied to the main branch
    - Pull request reviews are required
 
+![alt text](image-14.png)
 ### 8. Update the Repository Settings
 
 In the `main.tf` file, update the repository configuration:
@@ -197,6 +200,7 @@ terraform apply
 
 Review the proposed changes and type `yes` when prompted to confirm.
 
+
 ### 11. Update the Branch Protection
 
 In the `main.tf` file, update the branch protection configuration:
@@ -211,7 +215,7 @@ resource "github_branch_protection" "main" {
   }
 }
 ```
-
+![alt text](image-15.png)
 ### 12. Run a Terraform Plan to Perform a Dry Run
 
 Generate and review the execution plan:
@@ -230,6 +234,8 @@ terraform apply
 ```
 
 Review the proposed changes and type `yes` when prompted to confirm.
+
+![alt text](image-16.png)
 
 ## Verification Steps
 
